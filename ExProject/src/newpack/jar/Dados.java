@@ -39,7 +39,10 @@ public class Dados {
 	        //return pos;
 	    }
 	    public static void main(String[] args) {
+	    	//Introducimos modificaciones
+	    	System.out.println("*******************************INICIO PARTIDA*************************");
 	    	rellenaraleatorios(a1,a2,a3);
 	    	imprimir(a1,"Dado 1",a2,"Dado 2",a3,"Dado 3");
+	    	System.out.println("*******************************FIN PARTIDA****************************");
 	    }
 }
