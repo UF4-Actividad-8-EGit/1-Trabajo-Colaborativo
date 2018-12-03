@@ -16,6 +16,8 @@ public class Dados {
 	        }
 	    }
 	         
+	    //comentario de Ismael. 
+	    
 	    static void imprimir(int x[],String dado1,int y[],String dado2,int z[],String dado3){
 	        for(int i=0;i<x.length;i++){
 	             
