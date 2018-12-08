@@ -1,18 +1,21 @@
 package newpack.jar;
 
+import java.util.Scanner;
+
 public class Dados {
 	    static int MAX=20;
+	    static int numeroDeCarasDelDado;
 	    static int a1[]=new int[MAX];
 	    static int a2[]=new int[MAX];
 	    static int a3[]=new int[MAX];
 	    static int pares[]=new int[MAX];
 	     
-	    static void rellenaraleatorios(int x[], int y[], int z[]){
+	    static void rellenaraleatorios(int x[], int y[], int z[], int numeroDeCarasDelDado){
 	        for(int i=0;i<x.length;i++)
 	        {
-	            x[i]=(int)(Math.random()*6+1);
-	            y[i]=(int)(Math.random()*6+1);
-	            z[i]=(int)(Math.random()*6+1);
+	            x[i]=(int)(Math.random()*numeroDeCarasDelDado+1);
+	            y[i]=(int)(Math.random()*numeroDeCarasDelDado+1);
+	            z[i]=(int)(Math.random()*numeroDeCarasDelDado+1);
 	        }
 	    }
 	         
@@ -41,9 +44,18 @@ public class Dados {
 	        //return pos;
 	    }
 	    public static void main(String[] args) {
+	    	//Modificacion ==> Posibilidad de elegir el numero de caras del dado
+	    	Scanner lector = new Scanner(System.in);
+			System.out.println("Escribe el numero de caras del dado:");
+			//Pido numeros hasta que meta uno valido (natural positivo)
+			do {
+			    while (!lector.hasNextInt()) lector.next();
+			    numeroDeCarasDelDado = lector.nextInt();
+			} while (numeroDeCarasDelDado <= 0);
+			lector.close();
 	    	//Introducimos modificaciones
 	    	System.out.println("*******************************INICIO PARTIDA*************************");
-	    	rellenaraleatorios(a1,a2,a3);
+	    	rellenaraleatorios(a1,a2,a3, numeroDeCarasDelDado);
 	    	imprimir(a1,"Dado 1",a2,"Dado 2",a3,"Dado 3");
 	    	System.out.println("*******************************FIN PARTIDA****************************");
 	    }
